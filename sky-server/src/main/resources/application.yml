@@ -19,6 +19,7 @@ mybatis:
   type-aliases-package: com.sky.entity
   configuration:
     #开启驼峰命名
+    #将数据库中的下划线命名风格自动转换为Java实体类中的驼峰命名风格
     map-underscore-to-camel-case: true
 
 logging:
