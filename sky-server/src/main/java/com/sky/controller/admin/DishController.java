@@ -5,6 +5,7 @@ import com.sky.dto.DishPageQueryDTO;
 import com.sky.result.PageResult;
 import com.sky.result.Result;
 import com.sky.service.DishService;
+import com.sky.vo.DishVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -72,6 +73,27 @@ public class DishController {
     @ApiOperation("启售、禁售分类")
     public Result<String> startOrStop(@PathVariable Integer status, Long id) {
         dishService.startOrStop(status, id);
+        return Result.success();
+    }
+
+    /**
+     * 根据id查询菜品
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    @ApiOperation("根据id查询菜品")
+    public Result<DishVO> getById(@PathVariable Long id) {
+        log.info("根据id查询菜品");
+        DishVO dishVO = dishService.getByIdWithFlavor(id);
+        return Result.success(dishVO);
+    }
+
+    @PutMapping
+    @ApiOperation("修改菜品")
+    public Result update(@RequestBody DishDTO dishDTO) {
+        log.info("修改菜品:{}",dishDTO);
+        dishService.updateWithFlavor(dishDTO);
         return Result.success();
     }
 }

@@ -51,6 +51,7 @@ public interface DishMapper {
 
     /**
      * 启售、禁售分类
+     * 根据id动态修改菜品数据
      * @param dish
      */
     @AutoFill(value = OperationType.UPDATE)
