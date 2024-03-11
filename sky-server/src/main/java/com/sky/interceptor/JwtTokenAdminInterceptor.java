@@ -1,4 +1,4 @@
-package com.sky.controller.admin.interceptor;
+package com.sky.interceptor;
 
 import com.sky.constant.JwtClaimsConstant;
 import com.sky.context.BaseContext;
@@ -59,3 +59,4 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
         }
     }
 }
+
