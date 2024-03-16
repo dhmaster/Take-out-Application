@@ -32,6 +32,8 @@ public class GlobalExceptionHandler {
      * @param ex
      * @return
      * */
+    // 表明该方法是一个异常处理器，用于处理特定类型的异常——SQLIntegrityConstraintViolationException
+    // 当Spring框架中的某个部分抛出这种类型的异常时，它会被这个方法捕获。
     @ExceptionHandler
     public Result exceptionHandler(SQLIntegrityConstraintViolationException ex) {
         // Duplicate entry 'jack' for key 'idx_username'

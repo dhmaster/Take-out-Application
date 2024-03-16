@@ -23,6 +23,14 @@ public interface DishMapper {
     Integer countByCategoryId(long categoryId);
 
     /**
+     * 根据套餐id查询菜品
+     * @param setmealId
+     * @return
+     */
+    @Select("select a.* from dish a left join setmeal_dish b on a.id = b.dish_id where b.setmeal_id = #{setmealId}")
+    List<Dish> getBySetmealId(Long setmealId);
+
+    /**
      * 插入菜品数据
      * @param dish
      */
@@ -60,7 +68,7 @@ public interface DishMapper {
     void update(Dish dish);
 
     /**
-     * 根据分类id查询菜品
+     * 动态条件查询菜品
      * @param dish
      * @return
      */

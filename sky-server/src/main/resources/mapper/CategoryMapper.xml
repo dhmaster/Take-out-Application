@@ -34,6 +34,6 @@
         <if test="type != null">
             and type = #{type}
         </if>
-        order by sort asc, create_time desc
+        order by sort asc,create_time desc
     </select>
 </mapper>
