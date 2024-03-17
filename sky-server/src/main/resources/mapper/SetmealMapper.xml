@@ -69,11 +69,11 @@
                 and name like concat('%',#{name},'%')
             </if>
             <if test="categoryId != null">
-                category_id = #{categoryId},
+                and category_id = #{categoryId}
             </if>
-            <if test="status != null">
-                and status = #{status}
-            </if>
+            <!--            <if test="status != null">-->
+            <!--                and status = #{status}-->
+            <!--            </if>-->
         </where>
     </select>
 </mapper>

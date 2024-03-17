@@ -46,7 +46,7 @@ public interface SetmealMapper {
 
     /**
      * 根据分类 id 查询套餐的数量
-     * @param id
+     * @param categoryId
      * @return
      */
     @Select("select count(id) from setmeal where category_id = #{categoryId}")
